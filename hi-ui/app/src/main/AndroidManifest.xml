@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hiui">
-        <activity android:name=".tab.HiTabBottomDemoActivity"></activity>
+        <activity android:name=".tab.HiTabTopDemoActivity"></activity>
+        <activity android:name=".tab.HiTabBottomDemoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

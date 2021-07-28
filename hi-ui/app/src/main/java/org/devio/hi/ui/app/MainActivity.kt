@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import org.devio.hi.ui.app.tab.HiTabBottomDemoActivity
+import org.devio.hi.ui.app.tab.HiTabTopDemoActivity
 import org.devio.hi.ui.tab.bottom.HiTabBottom
 import org.devio.hi.ui.tab.bottom.HiTabBottomInfo
 
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         when (v!!.id) {
             R.id.tv_tab_bottom -> {
                 startActivity(Intent(this, HiTabBottomDemoActivity::class.java))
+            }
+            R.id.tv_tab_top -> {
+                startActivity(Intent(this, HiTabTopDemoActivity::class.java))
             }
         }
     }
