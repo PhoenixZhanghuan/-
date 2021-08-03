@@ -1,6 +1,7 @@
 package org.devio.hi.ui.refresh;
 
 import android.content.Context;
+import android.text.Layout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,22 +10,25 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import org.devio.hi.ui.R;
 
 public class HiTextOverView extends HiOverView {
     private TextView mText;
     private View mRotateView;
 
-    public HiTextOverView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+    public HiTextOverView(@NonNull Context context) {
+        super(context);
     }
 
-    public HiTextOverView(Context context, AttributeSet attrs) {
+    public HiTextOverView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public HiTextOverView(Context context) {
-        super(context);
+    public HiTextOverView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
     }
 
     @Override
@@ -36,10 +40,11 @@ public class HiTextOverView extends HiOverView {
 
     @Override
     protected void onScroll(int scrollY, int pullRefreshHeight) {
+
     }
 
     @Override
-    public void onVisible() {
+    protected void onVisible() {
         mText.setText("下拉刷新");
     }
 
@@ -61,6 +66,4 @@ public class HiTextOverView extends HiOverView {
     public void onFinish() {
         mRotateView.clearAnimation();
     }
-
-
 }

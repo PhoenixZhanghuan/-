@@ -3,7 +3,7 @@ package org.devio.hi.ui.refresh;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
-public class HiGestureDetector implements GestureDetector.OnGestureListener {
+public class HiGestureDetector implements GestureDetector.OnGestureListener{
     @Override
     public boolean onDown(MotionEvent e) {
         return false;

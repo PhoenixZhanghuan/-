@@ -9,7 +9,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import android.widget.Scroller;
 
-import org.devio.hi.library.log.HiLog;
+//import org.devio.hi.library.log.HiLog;
 import org.devio.hi.ui.refresh.HiOverView.HiRefreshState;
 
 /**
@@ -20,7 +20,7 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
     private HiRefreshState mState;
     private GestureDetector mGestureDetector;
     private AutoScroller mAutoScroller;
-    private HiRefreshListener mHiRefreshListener;
+    private HiRefresh.HiRefreshListener mHiRefreshListener;
     protected HiOverView mHiOverView;
     private int mLastY;
     //刷新时是否禁止滚动
@@ -54,20 +54,20 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
     @Override
     public void refreshFinished() {
         final View head = getChildAt(0);
-        HiLog.i(this.getClass().getSimpleName(), "refreshFinished head-bottom:" + head.getBottom());
+//        HiLog.i(this.getClass().getSimpleName(), "refreshFinished head-bottom:" + head.getBottom());
         mHiOverView.onFinish();
         mHiOverView.setState(HiRefreshState.STATE_INIT);
         final int bottom = head.getBottom();
         if (bottom > 0) {
             //下over pull 200，height 100
-             //  bottom  =100 ,height 100
+            //  bottom  =100 ,height 100
             recover(bottom);
         }
         mState = HiRefreshState.STATE_INIT;
     }
 
     @Override
-    public void setRefreshListener(HiRefreshListener hiRefreshListener) {
+    public void setRefreshListener(HiRefresh.HiRefreshListener hiRefreshListener) {
         mHiRefreshListener = hiRefreshListener;
     }
 
@@ -146,7 +146,7 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
             mLastY = 0;
         }
         boolean consumed = mGestureDetector.onTouchEvent(ev);
-        HiLog.i(TAG, "gesture consumed：" + consumed);
+//        HiLog.i(TAG, "gesture consumed：" + consumed);
         if ((consumed || (mState != HiRefreshState.STATE_INIT && mState != HiRefreshState.STATE_REFRESH)) && head.getBottom() != 0) {
             ev.setAction(MotionEvent.ACTION_CANCEL);//让父类接受不到真实的事件
             return super.dispatchTouchEvent(ev);
@@ -166,7 +166,7 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
         View head = getChildAt(0);
         View child = getChildAt(1);
         if (head != null && child != null) {
-            HiLog.i(TAG, "onLayout head-height:" + head.getMeasuredHeight());
+//            HiLog.i(TAG, "onLayout head-height:" + head.getMeasuredHeight());
             int childTop = child.getTop();
             if (mState == HiRefreshState.STATE_REFRESH) {
                 head.layout(0, mHiOverView.mPullRefreshHeight - head.getMeasuredHeight(), right, mHiOverView.mPullRefreshHeight);
@@ -182,7 +182,7 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
                 other = getChildAt(i);
                 other.layout(0, top, right, bottom);
             }
-            HiLog.i(TAG, "onLayout head-bottom:" + head.getBottom());
+//            HiLog.i(TAG, "onLayout head-bottom:" + head.getBottom());
         }
     }
 
@@ -203,14 +203,14 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
      * @return
      */
     private boolean moveDown(int offsetY, boolean nonAuto) {
-        HiLog.i("111", "changeState:" + nonAuto);
+//        HiLog.i("111", "changeState:" + nonAuto);
         View head = getChildAt(0);
         View child = getChildAt(1);
         int childTop = child.getTop() + offsetY;
 
-        HiLog.i("-----", "moveDown head-bottom:" + head.getBottom() + ",child.getTop():" + child.getTop() + ",offsetY:" + offsetY);
+//        HiLog.i("-----", "moveDown head-bottom:" + head.getBottom() + ",child.getTop():" + child.getTop() + ",offsetY:" + offsetY);
         if (childTop <= 0) {//异常情况的补充
-            HiLog.i(TAG, "childTop<=0,mState" + mState);
+//            HiLog.i(TAG, "childTop<=0,mState" + mState);
             offsetY = -child.getTop();
             //移动head与child的位置，到原始位置
             head.offsetTopAndBottom(offsetY);
@@ -230,7 +230,7 @@ public class HiRefreshLayout extends FrameLayout implements HiRefresh {
             head.offsetTopAndBottom(offsetY);
             child.offsetTopAndBottom(offsetY);
             if (childTop == mHiOverView.mPullRefreshHeight && mState == HiRefreshState.STATE_OVER_RELEASE) {
-                HiLog.i(TAG, "refresh，childTop：" + childTop);
+//                HiLog.i(TAG, "refresh，childTop：" + childTop);
                 refresh();
             }
         } else {
