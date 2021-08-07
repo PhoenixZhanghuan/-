@@ -39,4 +39,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_tab_top" />
 
+    <TextView
+        android:id="@+id/tv_hi_banner"
+        android:onClick="onClick"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HiBanner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hi_refresh" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package org.devio.hi.ui.app.refresh
+package org.devio.hi.ui.app.demo.refresh
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

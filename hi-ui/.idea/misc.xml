@@ -4,8 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/activity_hi_banner_demo.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_hi_refresh.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11820652173913043" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/banner_item_layout.xml" value="0.1" />
+        <entry key="hiui/src/main/res/drawable/shape_hi_slider_indicator.xml" value="0.14629629629629629" />
+        <entry key="hiui/src/main/res/drawable/shape_point_normal.xml" value="0.14629629629629629" />
+        <entry key="hiui/src/main/res/drawable/shape_point_select.xml" value="0.14629629629629629" />
+        <entry key="hiui/src/main/res/layout/hi_banner_item_image.xml" value="0.1" />
         <entry key="hiui/src/main/res/layout/hi_refresh_overview.xml" value="0.1" />
         <entry key="hiui/src/main/res/layout/layout.xml" value="0.1" />
       </map>

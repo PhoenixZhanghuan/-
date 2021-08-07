@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.devio.hi.ui.app">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hiui">
         <activity
-            android:name=".refresh.HiRefreshDemoActivity"
+            android:name=".demo.banner.HiBannerDemoActivity"
             android:exported="true" />
-        <activity android:name=".tab.HiTabTopDemoActivity" />
-        <activity android:name=".tab.HiTabBottomDemoActivity" />
+        <activity
+            android:name=".demo.refresh.HiRefreshDemoActivity"
+            android:exported="true" />
+        <activity android:name=".demo.tab.HiTabTopDemoActivity" />
+        <activity android:name=".demo.tab.HiTabBottomDemoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

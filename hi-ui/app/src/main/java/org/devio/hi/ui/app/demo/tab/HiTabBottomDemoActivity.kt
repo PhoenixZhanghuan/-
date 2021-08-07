@@ -1,4 +1,4 @@
-package org.devio.hi.ui.app.tab
+package org.devio.hi.ui.app.demo.tab
 
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
