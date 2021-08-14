@@ -32,7 +32,7 @@ class HiBannerDemoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hi_banner_demo)
-        initView(HiNumIndicator(this),false)
+        initView(HiCircleIndicator(this),false)
         findViewById<Switch>(R.id.auto_play).setOnCheckedChangeListener { _, isChecked ->
             autoPlay = isChecked;
             initView(hiIndicator, autoPlay);
