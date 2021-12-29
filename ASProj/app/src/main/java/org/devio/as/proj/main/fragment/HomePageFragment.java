@@ -27,6 +27,8 @@ public class HomePageFragment extends HiBaseFragment {
                 navigation("/profile/detail")
         );
 
+
+
     }
 
     void navigation(String path) {
